@@ -1,10 +1,18 @@
 /// <reference types="cypress" />
 
 context('Funcionalidade Login', () =>{
+
+	beforeEach(() => {
+		cy.visit('https://www.unip.br/aluno/central/')
+		
+	});
+
+	afterEach(() => {
+		cy.screenshot()
+	});
   
   it('Deve fazer login com sucesso', () =>{
     
-    cy.visit('https://www.unip.br/aluno/central/')
     cy.get('#inputRA').type('2139529')
     cy.get('#inputSenha').type('Anderson1@')
     cy.get('form.ng-dirty > :nth-child(3) > .btn').click()
@@ -15,7 +23,6 @@ context('Funcionalidade Login', () =>{
 
   it('Deve exibir uma mensagem de erro ao inserir usuário inválidos', () =>{
 
-	cy.visit('https://www.unip.br/aluno/central/')
     cy.get('#inputRA').type('2139528')
     cy.get('#inputSenha').type('Anderson1@')
     cy.get('form.ng-dirty > :nth-child(3) > .btn').click()
@@ -26,7 +33,6 @@ context('Funcionalidade Login', () =>{
 
   it('Deve exibir uma mensagem de erro ao inserir senha inválidos', () =>{
 
-	cy.visit('https://www.unip.br/aluno/central/')
     cy.get('#inputRA').type('2139529')
     cy.get('#inputSenha').type('Anderson1')
     cy.get('form.ng-dirty > :nth-child(3) > .btn').click()
