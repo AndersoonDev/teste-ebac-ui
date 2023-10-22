@@ -3,15 +3,15 @@
 context('Funcionalidade Login', () =>{
 
 	beforeEach(() => {
-		cy.visit('https://www.unip.br/aluno/central/')
+		cy.visit('aluno/central')
 		
 	});
 
-	afterEach(() => {
-		cy.screenshot()
-	});
+	// afterEach(() => {
+	// 	cy.screenshot()
+	// });
   
-  it('Deve fazer login com sucesso', () =>{
+  it.only('Deve fazer login com sucesso', () =>{
     
     cy.get('#inputRA').type('2139529')
     cy.get('#inputSenha').type('Anderson1@')
