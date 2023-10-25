@@ -3,7 +3,7 @@
 context('Funcionalidade Login', () => {
 
     beforeEach(() => {
-        cy.visit('aluno/central')
+        cy.visit('https://www.unip.br/aluno/central/')
 
     });
 

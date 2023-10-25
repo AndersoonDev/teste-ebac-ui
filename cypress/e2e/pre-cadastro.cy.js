@@ -31,6 +31,14 @@ describe("Funcionalidade Pré Cadastro", () => {
         );
     });
 
+    it('Deve completar o pre-cadastro com sucesso', () => {
+
+        cy.fixture('preCadastro').then(dados => {
+
+            cy.preCadastro(dados.emailFaker, dados.senhaFaker, dados.nomeFaker, dados.sobrenomeFaker)
+        })
+    })
+
     it.only('Deve completar o pré-cadastro com sucesso - usando comandos customizados', () => {
 
         const emailFaker2 = faker.internet.email()

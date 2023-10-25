@@ -23,7 +23,7 @@ const { faker } = require("@faker-js/faker");
 
 describe("Funcionalidade página de produtos", () => {
     beforeEach(() => {
-        cy.visit("http://lojaebac.ebaconline.art.br/");
+        cy.visit("http://lojaebac.ebaconline.art.br/produtos/");
     });
 
     it("Deve selecionar um produtos da lista", () => {
@@ -46,14 +46,14 @@ describe("Funcionalidade página de produtos", () => {
     });
 
     it('Deve adicionar produtos ao carrinho - Usando comando custumizado', () => {
-        // cy.fixture('addProdutos').then(dados => {
+
         cy.addProdutos('Stellar Solar Jacket', 'M', 'Yellow', 4)
-        // })
+
     })
 
     it.only('Deve adicionar produtos ao carrinho - Usando comando custumizado', () => {
 
-        cy.addProdutos('Eos V-Neck Hoodie', 'S', 'Blue', 1)
+        cy.addProdutos('Abominable Hoodie', 'S', 'Blue', 1)
 
     })
 });
